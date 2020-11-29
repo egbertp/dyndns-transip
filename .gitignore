@@ -1,0 +1,12 @@
+# Don't add binary to git
+dyndns-transip
+
+# Don't add configuration file to git
+dyndns-transip.yaml
+transip.key
+
+# Don't commit the binary releases to git
+dist/*
+!dist/.gitkeep
+
+.circleci
