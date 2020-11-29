@@ -18,7 +18,15 @@ This project is heavily inspired by [`go-transip-dyndns`](https://github.com/jle
 
 ## Download & install
 
-Download the latest version compatible with your OS and architecture
+Binaries are available for download in multiple formats
+
+* Windows (i386, amd64)
+* Linux (i386, amd64, armv6 arm64)
+* MacOS (amd64)
+* OpenBSD (i386, amd64, armv6 arm64)
+* FreeBSD (i386, amd64, armv6 arm64)
+
+Download them [here](https://github.com/egbertp/dyndns-transip/releases).
 
 One-liner for `Linux` on `amd64`
 ```sh
