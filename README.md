@@ -90,7 +90,7 @@ This tool has been created to compensate for the fact that my ISP does not provi
 
 * [Cobra](https://github.com/spf13/cobra) - Cobra is both a library for creating powerful modern CLI applications as well as a program to generate applications and command files.
 * [Viper](https://github.com/spf13/viper) - Viper is a complete configuration solution for Go applications including 12-Factor apps.
-* [mitchellh/gox](github.com/mitchellh/gox) - Gox - Simple Go Cross Compilation
+* [GoReleaser - Release Go projects as fast and easily as possible!](https://goreleaser.com/)
 
 A big thanks to all authors and contributors of these libraries and tools!
 
