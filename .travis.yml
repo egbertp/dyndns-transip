@@ -20,12 +20,12 @@ script:
   - "${TRAVIS_BUILD_DIR}/release.sh"
 
 deploy:
-  # if: tag =~ /^v/
-  # if: tag IS present
   provider: releases
   token: "$GITHUB_PAT"
   file_glob: true
   file: dist/*
-  cleanup: false
+  # cleanup: false
+  skip_cleanup: true
+  draft: true
   on:
     tags: true
