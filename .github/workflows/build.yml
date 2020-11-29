@@ -38,6 +38,7 @@ jobs:
       run: |
         go version
         go get -u golang.org/x/lint/golint
+        go get -u github.com/mitchellh/gox
           
     # Run vet & lint on the code
     - name: Run vet & lint
