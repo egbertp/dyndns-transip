@@ -94,6 +94,16 @@ Add to crontab
 
 This tool has been created to compensate for the fact that my ISP does not provide me with a static IP address. There is no association with Transip.
 
+## Release new version 
+
+```sh
+$ git tag -a v1.0.0 -m "Production release"
+```
+
+```sh
+$ git push --follow-tags
+```
+
 ## Built with
 
 * [Cobra](https://github.com/spf13/cobra) - Cobra is both a library for creating powerful modern CLI applications as well as a program to generate applications and command files.
