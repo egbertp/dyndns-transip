@@ -12,3 +12,15 @@ install:
   - go get github.com/fzipp/gocyclo
   - go get github.com/gordonklaus/ineffassign
   - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.33.0
+
+build: 
+  - release.sh
+
+deploy:
+  provider: releases
+  api_key: "$GITHUB_PAT"
+  file_glob: true
+  file: dist/*
+  skip_cleanup: true
+  on:
+    tags: true  
