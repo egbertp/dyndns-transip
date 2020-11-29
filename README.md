@@ -104,6 +104,13 @@ $ git tag -a v1.0.0 -m "Production release"
 $ git push --follow-tags
 ```
 
+`git tag` mini cheat sheet
+```
+$ git fetch --all # fetch all remote to local
+$ git push --delete origin v0.8.1 # Remove tag remote
+$ git tag --delete v0.8.1 # Remove tag local
+```
+
 ## Built with
 
 * [Cobra](https://github.com/spf13/cobra) - Cobra is both a library for creating powerful modern CLI applications as well as a program to generate applications and command files.
