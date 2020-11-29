@@ -1,6 +1,6 @@
 # dyndns-transip
 
-[![](https://travis-ci.org/egbertp/dyndns-transip.svg?branch=master)](https://travis-ci.org/egbertp/dyndns-transip.svg?branch=master)
+[![](https://travis-ci.org/egbertp/dyndns-transip.svg?branch=master)](https://travis-ci.org/github/egbertp/dyndns-transip)
 
 
 Is a small little executable that will update a domain record of your choice that is hosted by [TransIP](https://www.transip.nl/). Run it via cron to keep your DNS record up to date.
