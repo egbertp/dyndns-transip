@@ -1,5 +1,8 @@
 # dyndns-transip
 
+[![](https://travis-ci.org/egbertp/dyndns-transip.svg?branch=master)](https://travis-ci.org/egbertp/dyndns-transip.svg?branch=master)
+
+
 Is a small little executable that will update a domain record of your choice that is hosted by [TransIP](https://www.transip.nl/). Run it via cron to keep your DNS record up to date.
 
 This project is heavily inspired by [`go-transip-dyndns`](https://github.com/jlentink/go-transip-dyndns) made by Jason Lentink. The inner working is similar. I used GoMods, updated to GoLang 1.15 and created binaries for more platforms and architectures (amongst others OpenBSD and FreeBSD).
