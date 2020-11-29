@@ -82,3 +82,4 @@ A big thanks to all authors and contributors of these libraries and tools!
 ## References
 
 * [One Liner to Download the Latest Release from Github Repo](https://gist.github.com/steinwaywhw/a4cd19cda655b8249d908261a62687f8)
+* [ipify API](https://www.ipify.org/)
