@@ -1,0 +1,47 @@
+# This is an example goreleaser.yaml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod download
+builds:
+  - env:
+      - CGO_ENABLED=0
+    main: ./cmd/main.go
+    goos:
+      - linux
+      - windows
+      - darwin
+      - freebsd
+      - openbsd
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+archives:
+- format: binary
+  # id: dyndns-transip
+  # name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
+  # wrap_in_directory: false
+  # - 
+  #   id: dyndns-transip
+  #   format: binary
+  #   name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
+  # - wrap_in_directory: false
+  # - replacements:
+  #     darwin: darwin
+  #     linux: linux
+  #     windows: windows
+  #     386: i386
+  #     amd64: x86_64
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
