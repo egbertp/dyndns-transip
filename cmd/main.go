@@ -11,10 +11,11 @@ import (
 
 var (
 	rootCmd = &cobra.Command{
-		Use:   "dyndns",
-		Short: "Update ip address on Transip DNS to current public ip ",
-		Long:  "Use the current ip to update to a record in the TransIP dns.\nAllowing for easy updating when your ip changes.",
-		Run:   commands.Update,
+		Use:     "dyndns-transip",
+		Short:   "Update ip address on Transip DNS to current public ip ",
+		Long:    "Use the current ip to update to a record in the TransIP dns.\nAllowing for easy updating when your ip changes.",
+		Version: version,
+		Run:     commands.Update,
 	}
 	userName string
 	keyFile  string
@@ -22,11 +23,12 @@ var (
 	verbose  bool
 )
 
-// Variables to identify the build
+// nolint: gochecknoglobals
 var (
-	CommitHash         string
-	ApplicationVersion string
-	BuildTime          string
+	version = "dev"
+	commit  = ""
+	date    = ""
+	builtBy = ""
 )
 
 func init() {
@@ -58,14 +60,6 @@ func init() {
 		Example: "",
 		Run:     commands.Update,
 	})
-	rootCmd.AddCommand(&cobra.Command{
-		Use:   "version",
-		Short: "Print the version number of dyndns-transip",
-		// Long:  `All software has versions. This is dyndns-transip's`,
-		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Printf("dyndns-transip version: %s, commit: %s, build time: %s\n", ApplicationVersion, CommitHash, BuildTime)
-		},
-	})
 
 	config.Get().BindPFlag("username", rootCmd.PersistentFlags().Lookup("username")) // nolint: errcheck
 	config.Get().BindPFlag("key", rootCmd.PersistentFlags().Lookup("key"))           // nolint: errcheck
@@ -74,14 +68,21 @@ func init() {
 }
 
 func main() {
+	rootCmd.Version = buildVersion(version, commit, date, builtBy)
+
 	rootCmd.Execute() // nolint: errcheck
 }
 
-var versionCmd = &cobra.Command{
-	Use:   "version",
-	Short: "Print the version number of Hugo",
-	Long:  `All software has versions. This is Hugo's`,
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Hugo Static Site Generator v0.9 -- HEAD")
-	},
+func buildVersion(version, commit, date, builtBy string) string {
+	var result = version
+	if commit != "" {
+		result = fmt.Sprintf("%s\ncommit: %s", result, commit)
+	}
+	if date != "" {
+		result = fmt.Sprintf("%s\nbuilt at: %s", result, date)
+	}
+	if builtBy != "" {
+		result = fmt.Sprintf("%s\nbuilt by: %s", result, builtBy)
+	}
+	return result
 }
