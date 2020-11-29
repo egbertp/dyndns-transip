@@ -21,20 +21,6 @@ builds:
       - arm64
 archives:
 - format: binary
-  # id: dyndns-transip
-  # name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
-  # wrap_in_directory: false
-  # - 
-  #   id: dyndns-transip
-  #   format: binary
-  #   name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
-  # - wrap_in_directory: false
-  # - replacements:
-  #     darwin: darwin
-  #     linux: linux
-  #     windows: windows
-  #     386: i386
-  #     amd64: x86_64
 checksum:
   name_template: 'checksums.txt'
 snapshot:
