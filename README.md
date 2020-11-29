@@ -37,9 +37,9 @@ $ curl -s https://api.github.com/repos/egbertp/dyndns-transip/releases/latest \
 
 Move the binary to `/usr/local/bin`
 ```sh
-$ chmod +x dyndns-transip_linux_amd64
-$ sudo mv dyndns-transip_linux_amd64 /usr/local/bin/.
-$ sudo ln -s /usr/local/bin/dyndns-transip_linux_amd64 /usr/local/bin/dyndns-transip
+$ chmod +x dyndns-transip_1.0.0_linux_amd64
+$ sudo mv dyndns-transip_1.0.0_linux_amd64 /usr/local/bin/.
+$ sudo ln -s /usr/local/bin/dyndns-transip_1.0.0_linux_amd64 /usr/local/bin/dyndns-transip
 ```
 
 ## Example config file
