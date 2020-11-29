@@ -21,7 +21,7 @@ script:
 
 deploy:
   # if: tag =~ /^v/
-  if: tag IS present
+  # if: tag IS present
   provider: releases
   token: "$GITHUB_PAT"
   file_glob: true
