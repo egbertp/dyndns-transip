@@ -7,18 +7,25 @@ env:
   global:
     - GO111MODULE=on
     - TRAVISBUILD=on
+
 install:
-  - go get golang.org/x/lint/golint
-  - go get github.com/fzipp/gocyclo
-  - go get github.com/gordonklaus/ineffassign
+  - go get -u golang.org/x/lint/golint
+  - go get -u github.com/fzipp/gocyclo
+  - go get -u github.com/gordonklaus/ineffassign
+  - go get -u github.com/mitchellh/gox
   - curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.33.0
-  - release.sh
+
+script: 
+  - ls -alFh
+  - "${TRAVIS_BUILD_DIR}/release.sh"
 
 deploy:
   provider: releases
-  api_key: "$GITHUB_PAT"
+  token: "$GITHUB_PAT"
   file_glob: true
   file: dist/*
+  # cleanup: false
   skip_cleanup: true
+  draft: true
   on:
-    tags: true  
+    tags: true
