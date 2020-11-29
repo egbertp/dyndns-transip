@@ -21,7 +21,9 @@ Download the latest version compatible with your OS and architecture
 
 One-liner for `Linux` on `amd64`
 ```sh
-$ curl -s https://api.github.com/repos/egbertp/dyndns-transip/releases/latest |  jq -r '.assets[] | select(.browser_download_url | contains("linux_amd64")) | .browser_download_url' | xargs -n 1 curl -O -sSL
+$ curl -s https://api.github.com/repos/egbertp/dyndns-transip/releases/latest \
+    |  jq -r '.assets[] | select(.browser_download_url | contains("linux_amd64")) | .browser_download_url' \
+    | xargs -n 1 curl -O -sSL
 ```
 
 Move the binary to `/usr/local/bin`
@@ -54,6 +56,18 @@ domain-ttl: 60
 $ dyndns-transip create
 ```
 
+## Update record
+
+```sh
+$ dyndns-transip
+
+DEBUG - Log level set to debug...
+DEBUG - Found IP address. (12.34.56.78)
+DEBUG - Update Record..
+DEBUG - IP is unchanged...
+INFO - Record is up to date subdomain.yourdomain.nl with ip 12.34.56.78.
+```
+
 For more info: `dyndns-transip help`
 
 ## Configure cron
@@ -64,7 +78,7 @@ $ crontab -e
 
 Add to crontab
 ```
-0 * * * * /usr/local/bin/go-transip-dyndns
+*/15 * * * * /usr/local/bin/dyndns-transip
 ```
 
 ## No association with Transip
