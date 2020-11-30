@@ -14,7 +14,7 @@ This project is heavily inspired by [`go-transip-dyndns`](https://github.com/jle
 
 1. Create a access key for the API. `(Control panel > My Account > API)`
 2. Add a label and press create.
-3. Save Key to a file. `e.g. transip.key`
+3. Save Key to a file. `e.g. /etc/dyndns-transip.key`
 
 ## Download & install
 
@@ -46,17 +46,35 @@ $ sudo ln -s /usr/local/bin/dyndns-transip_1.0.0_linux_amd64 /usr/local/bin/dynd
 
 name: `dyndns-transip.yaml`
 
-place the config file at `/etc/dyndns-transip.yaml` or in the directory where you execute the command.
+place the config file at `/etc/dyndns-transip.yaml`.
+optional, you can place the file in the directory where you execute the command.
 
 ```yaml
 username: "transip-username"
-private-key: "/path-to/private.key"
+private-key: "/etc/dyndns-transip.key"
 
 verbose: false
 
 domain: "yourdomain.nl"
 domain-entry: "subdomain"
 domain-ttl: 60
+```
+
+```sh
+$ chown root:wheel /etc/dyndns-transip.yaml
+$ chmod 0644 /etc/dyndns-transip.yaml
+```
+
+Place the TransIP key in `/etc/dyndns-transip.key`
+```
+-----BEGIN PRIVATE KEY-----
+(...........................)
+-----END PRIVATE KEY-----
+```
+
+```sh
+$ chown root:wheel /etc/dyndns-transip.key
+$ chmod 0400 /etc/dyndns-transip.key
 ```
 
 ## Create DNS record
