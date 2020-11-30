@@ -89,10 +89,10 @@ $ dyndns-transip create
 $ dyndns-transip
 
 DEBUG - Log level set to debug...
-DEBUG - Found IP address. (12.34.56.78)
+DEBUG - Found IP address. (198.51.100.53)
 DEBUG - Update Record..
 DEBUG - IP is unchanged...
-INFO - Record is up to date subdomain.yourdomain.nl with ip 12.34.56.78.
+INFO - Record is up to date subdomain.yourdomain.nl with ip 198.51.100.53.
 ```
 
 For more info: `dyndns-transip help`
